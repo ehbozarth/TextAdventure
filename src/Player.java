@@ -10,10 +10,7 @@ public class Player {
 
     void chooseName(){
         System.out.println("What is your name?");
-
-        Scanner scanner = new Scanner(System.in);
-
-        name = scanner.nextLine();
+        name = Game.nextLine();
 
         System.out.println("Good luck, " + name);
     }//End of chooseName
@@ -22,9 +19,7 @@ public class Player {
         System.out.println("[1] Pick up Sword");
         System.out.println("[2] Pick up Mallet");
 
-        Scanner scanner = new Scanner(System.in);
-
-        weapon = scanner.nextLine();
+        weapon = Game.nextLine();
         int weaponNum = Integer.valueOf(weapon);
 
         if (weaponNum == 1){
@@ -44,9 +39,7 @@ public class Player {
         System.out.println("[1] Enter the Forest");
         System.out.println("[2] Enter the underground tunnel");
 
-        Scanner scanner = new Scanner(System.in);
-
-        area = scanner.nextLine();
+        area = Game.nextLine();
         int areaNum = Integer.valueOf(area);
 
         if (areaNum == 1){
