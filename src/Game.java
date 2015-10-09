@@ -12,7 +12,6 @@ public class Game {
         while (true) {
             Player player = new Player();
             player.chooseName();
-            ;
             player.chooseWeapon();
             player.chooseArea();
         }//End of While Loop
