@@ -13,7 +13,6 @@ public class Game {
 
         player = new Player();
 
-
         while (true) {
             player.chooseName();
             player.chooseWeapon();
