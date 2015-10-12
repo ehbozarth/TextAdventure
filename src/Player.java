@@ -1,3 +1,5 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -7,6 +9,7 @@ public class Player {
     String name;
     String weapon;
     String area;
+    ArrayList items = new ArrayList();
 
     void chooseName(){
         System.out.println("What is your name?");
@@ -52,5 +55,14 @@ public class Player {
             throw new Exception("invalid area");
         }
     }//End of chooseArea
+
+    void findItem(String item){
+        System.out.println("Found item! Pick it up? [y/n]");
+        String s = Game.nextLine();
+        if(s.equals("y")){
+            System.out.println("You found a " + item);
+            items.add(item);
+        }
+    }
 
 }//End of Player Class

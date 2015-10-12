@@ -6,14 +6,19 @@ import java.util.*;
 
 public class Game {
 
-    public static void run() throws Exception {
+    static Player player;
+
+    public static void main(String [] args) throws Exception {
         System.out.println("Welcome to Text Adventure");
 
+        player = new Player();
+
+
         while (true) {
-            Player player = new Player();
             player.chooseName();
             player.chooseWeapon();
             player.chooseArea();
+            player.findItem("Golden Apple");
         }//End of While Loop
     }//End of Run Method
 
@@ -27,6 +32,14 @@ public class Game {
                 System.out.println("/help => List of availabe acommands");
             } else if (s.equals("/exit")) {
                 System.exit(0);
+            }
+            else if(s.equals("/inv")){
+                if (player.items.size() == 0){
+                    System.out.println("You have no items");
+                }
+                for(Object item : player.items){
+                    System.out.println(item);
+                }//End of for loop
             }
             return nextLine();
         }//end of if
