@@ -5,11 +5,15 @@ import java.util.Scanner;
 /**
  * Created by earlbozarth on 10/9/15.
  */
-public class Player {
-    String name;
+public class Player extends Character{
     String weapon;
     String area;
     ArrayList items = new ArrayList();
+
+    public Player(){
+        health = 100;
+        damage = 20;
+    }
 
     void chooseName(){
         System.out.println("What is your name?");
