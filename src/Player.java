@@ -14,8 +14,7 @@ public class Player {
     void chooseName(){
         System.out.println("What is your name?");
         name = Game.nextLine();
-
-        System.out.println("Good luck, " + name);
+        System.out.println(String.format("Good luck, %s",  name));
     }//End of chooseName
 
     void chooseWeapon() throws Exception {
