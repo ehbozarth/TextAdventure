@@ -26,4 +26,19 @@ public class Character {
 
     }//End of Battle Method
 
+    public String getName() {
+        return name;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public Weapon getWeapon() {
+        return weapon;
+    }
 }//End of Character Class
