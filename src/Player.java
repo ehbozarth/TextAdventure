@@ -6,7 +6,6 @@ import java.util.Scanner;
  * Created by earlbozarth on 10/9/15.
  */
 public class Player extends Character{
-    String weapon;
     String area;
     ArrayList items = new ArrayList();
 
@@ -25,20 +24,26 @@ public class Player extends Character{
         System.out.println("[1] Pick up Sword");
         System.out.println("[2] Pick up Mallet");
 
-        weapon = Game.nextLine();
-        int weaponNum = Integer.valueOf(weapon);
+        int weaponNum = Integer.valueOf(Game.nextLine());
 
         if (weaponNum == 1){
             //weapons.equals("1")
-            System.out.println("The sword is a good choice!");
+            //System.out.println("The sword is a good choice!");
+            weapon = new Weapon();
+            weapon.name = "Sword";
+            weapon.damage = 10;
         }//End of if
         else if(weaponNum == 2) {
             //weapon.equals("2")
-            System.out.println("The mallet is a fine choice!");
+            //System.out.println("The mallet is a fine choice!");
+            weapon = new Weapon();
+            weapon.name = "Mallet";
+            weapon.damage = 15;
         }//End of else if
         else {
             throw new Exception("invalid weapon");
         }
+        System.out.println(String.format("That's a fine %s!", weapon.name.toLowerCase()));
     }//End of chooseWeapon
 
     void chooseArea() throws Exception {

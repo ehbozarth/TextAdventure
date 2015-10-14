@@ -19,7 +19,11 @@ public class Game {
             player.chooseArea();
             player.findItem("Golden Apple");
 
-            Enemy orge = new Enemy("Ogre", 50, 5);
+            Weapon orgeWeapon = new Weapon();
+            orgeWeapon.name = "Club";
+            orgeWeapon.damage = 5;
+            Enemy orge = new Enemy("Ogre", 50, 5,orgeWeapon);
+
             player.battle(orge);
         }//End of While Loop
     }//End of Run Method
