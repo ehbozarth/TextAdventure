@@ -29,6 +29,8 @@ public class Game {
             //player.findItem(itemName);
             player.findItem("Shield");
         }//End of If player is null statement
+
+
         Weapon orgeWeapon = new Weapon();
         orgeWeapon.name = "Club";
         orgeWeapon.damage = 5;
