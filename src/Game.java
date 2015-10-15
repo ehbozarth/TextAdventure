@@ -1,10 +1,8 @@
 /*
  * Created by earlbozarth on 10/8/15.
  */
-
 import jodd.json.JsonParser;
 import jodd.json.JsonSerializer;
-
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -13,18 +11,23 @@ import java.util.*;
 public class Game {
 
     static Player player;
+    static final String FILE_NAME = "save.json";
+
 
     public static void main(String [] args) throws Exception {
         System.out.println("Welcome to Text Adventure");
 
         player = loadGame();
 
+        //final String itemName = "Shield";//Creating a constant variable that does not change
+
         if(player == null){
             player = new Player();
             player.chooseName();
             player.chooseWeapon();
             player.chooseArea();
-            player.findItem("Golden Apple");
+            //player.findItem(itemName);
+            player.findItem("Shield");
         }//End of If player is null statement
         Weapon orgeWeapon = new Weapon();
         orgeWeapon.name = "Club";
@@ -65,7 +68,7 @@ public class Game {
     }//End of nextLine method
 
     static void saveGame(){
-        File f = new File("save.json");
+        File f = new File(FILE_NAME);
         JsonSerializer serializer = new JsonSerializer();
         String contentToSave = serializer.serialize(player);
 
@@ -81,7 +84,7 @@ public class Game {
     static Player loadGame(){
 
         try {
-            File f = new File("save.json");
+            File f = new File(FILE_NAME);
             FileReader fr = new FileReader(f);
             int fileSize = (int)f.length();
             char [] contents = new char[fileSize];
