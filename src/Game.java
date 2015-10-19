@@ -27,10 +27,12 @@ public class Game {
             player.chooseWeapon();
             player.chooseArea();
             //player.findItem(itemName);
-            player.findItem("Shield");
+
+
         }//End of If player is null statement
 
-
+        player.findItem("Shield");
+        player.findItem("Boots");
         Weapon orgeWeapon = new Weapon();
         orgeWeapon.name = "Club";
         orgeWeapon.damage = 5;
@@ -57,7 +59,10 @@ public class Game {
                 if (player.items.size() == 0){
                     System.out.println("You have no items");
                 }
-                for(Object item : player.items){
+                for(String item : player.items){
+                    //Casting
+                    //String itemStr = (String) item;
+                    //System.out.println(itemStr.charAt(0));
                     System.out.println(item);
                 }//End of for loop
             }
